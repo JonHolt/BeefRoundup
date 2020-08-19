@@ -3,8 +3,8 @@
 [ext_resource path="res://Scenes/Beamable.gd" type="Script" id=1]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 5.75452
-height = 10.3951
+radius = 5.04662
+height = 7.32754
 
 [node name="Beamable" type="Area2D"]
 script = ExtResource( 1 )
