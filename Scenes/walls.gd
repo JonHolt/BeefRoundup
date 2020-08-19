@@ -12,7 +12,7 @@ func _ready():
 	for extpos in [
 			[Vector2(thalf, win.y/2), Vector2(tin - thalf, win.y/2)],  #left
 			[Vector2(thalf, win.y/2), Vector2(win.x + thalf - tin, win.y/2)],  #right
-			[Vector2(win.x/2, thalf), Vector2(win.x/2, tin - thalf)],  #top
+			[Vector2(win.x/2, thalf), Vector2(win.x/2, tin - thalf + 64)],  #top
 			[Vector2(win.x/2, thalf), Vector2(win.x/2, win.y + thalf - tin)],  #bottom
 			]:
 		shape = RectangleShape2D.new()

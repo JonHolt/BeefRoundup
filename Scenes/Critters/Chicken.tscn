@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Wanderable.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Creatures/Chicken.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Critters/Chicken.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Beamable.tscn" type="PackedScene" id=4]
+
+[node name="Chicken" type="Sprite"]
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="Wanderable" parent="." instance=ExtResource( 1 )]
+move_speed = 2.0
+max_distance = 50
+max_wait_time = 2.0
+min_wait_time = 0.2
+
+[node name="Beamable" parent="." instance=ExtResource( 4 )]
+position = Vector2( 0, -9.817 )

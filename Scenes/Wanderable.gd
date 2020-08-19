@@ -30,5 +30,5 @@ func _on_Wanderable_timeout():
 
 func _new_destination():
 	var x = clamp(rng.randi_range(max_distance * -1, max_distance) + parent.global_position.x, 20, screen_size.x - 20)
-	var y = clamp(rng.randi_range(max_distance * -1, max_distance) + parent.global_position.y, 20, screen_size.y - 20)
+	var y = clamp(rng.randi_range(max_distance * -1, max_distance) + parent.global_position.y, 64, screen_size.y - 20)
 	destination = Vector2(x, y)

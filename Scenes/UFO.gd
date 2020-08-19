@@ -1,9 +1,11 @@
 extends RigidBody2D
 
 signal score_changed(newScore)
+signal impulse_changed(impulses)
 
 var selected = false
 var point_total = 0
+var impulses = 0
 
 func _process(_delta):
 	if selected:
@@ -20,6 +22,8 @@ func _input(event):
 		launch()
 
 func launch():
+	impulses += 1
+	emit_signal("impulse_changed", impulses)
 	var push = global_position - get_global_mouse_position()
 	apply_central_impulse(push)
 
