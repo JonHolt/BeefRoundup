@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/colored_transparent_packed.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/UFO.tscn" type="PackedScene" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://Scenes/CritterManager.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/Critters/Pig.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Impulses.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/Critters/Cat.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Critters/Dog.tscn" type="PackedScene" id=12]
 
 [sub_resource type="TileSet" id=1]
 0/name = "colored_transparent_packed.png 0"
@@ -191,25 +193,22 @@ position = Vector2( 165.657, 106.794 )
 [node name="CritterManager" type="Timer" parent="."]
 wait_time = 5.0
 script = ExtResource( 8 )
-critter_types = [ ExtResource( 4 ), ExtResource( 7 ), ExtResource( 9 ) ]
+critter_types = [ ExtResource( 4 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 12 ) ]
 
-[node name="Chicken" parent="." instance=ExtResource( 7 )]
-position = Vector2( 301.707, 71.2115 )
+[node name="Cow" parent="CritterManager" instance=ExtResource( 4 )]
+position = Vector2( 866.669, 161.121 )
 
-[node name="Chicken2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 357.833, 67.6479 )
+[node name="Cow2" parent="CritterManager" instance=ExtResource( 4 )]
+position = Vector2( 614.324, 461.14 )
 
-[node name="Chicken3" parent="." instance=ExtResource( 7 )]
-position = Vector2( 404.16, 67.6479 )
+[node name="Cow3" parent="CritterManager" instance=ExtResource( 4 )]
+position = Vector2( 629.404, 290.494 )
 
-[node name="Chicken4" parent="." instance=ExtResource( 7 )]
-position = Vector2( 111.945, 65.8661 )
+[node name="Cow4" parent="CritterManager" instance=ExtResource( 4 )]
+position = Vector2( 134.929, 376.214 )
 
-[node name="Chicken5" parent="." instance=ExtResource( 7 )]
-position = Vector2( 634.903, 70.3206 )
-
-[node name="Chicken6" parent="." instance=ExtResource( 7 )]
-position = Vector2( 693.702, 67.6479 )
+[node name="Pig" parent="CritterManager" instance=ExtResource( 9 )]
+position = Vector2( 352.121, 177.801 )
 [connection signal="impulse_changed" from="UFO" to="UI/Impulses" method="_on_UFO_impulse_changed"]
 [connection signal="score_changed" from="UFO" to="UI/Score" method="_on_UFO_score_changed"]
 [connection signal="timeout" from="CritterManager" to="CritterManager" method="_on_CritterManager_timeout"]

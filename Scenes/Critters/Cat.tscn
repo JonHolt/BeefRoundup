@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Creatures/cat.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Beamable.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Critters/Cat.gd" type="Script" id=3]
+
+[node name="Cat" type="Sprite" groups=[
+"critter",
+]]
+texture = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Beamable" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, -13.063 )

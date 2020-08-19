@@ -5,7 +5,9 @@
 [ext_resource path="res://Scenes/Critters/Chicken.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Beamable.tscn" type="PackedScene" id=4]
 
-[node name="Chicken" type="Sprite"]
+[node name="Chicken" type="Sprite" groups=[
+"critter",
+]]
 texture = ExtResource( 2 )
 script = ExtResource( 3 )
 

@@ -1,6 +1,6 @@
 extends Sprite
 
-export var pointValue = 5
+export var pointValue = -5
 const POINT_LABEL = preload("res://Scenes/PointValue.tscn")
 
 func beamed(body):

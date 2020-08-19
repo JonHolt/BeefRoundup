@@ -5,7 +5,9 @@
 [ext_resource path="res://Scenes/Wanderable.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Creatures/PIg.png" type="Texture" id=4]
 
-[node name="Pig" type="Sprite"]
+[node name="Pig" type="Sprite" groups=[
+"critter",
+]]
 scale = Vector2( 1.8, 1.8 )
 texture = ExtResource( 4 )
 script = ExtResource( 1 )

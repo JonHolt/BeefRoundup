@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://PointValue.gd" type="Script" id=1]
+[ext_resource path="res://Assets/half_size.tres" type="DynamicFont" id=2]
+
+[node name="PointValue" type="Label"]
+margin_left = -12.25
+margin_top = -6.5
+margin_right = 6.75
+margin_bottom = 9.5
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.333333, 0.956863, 0.0196078, 1 )
+text = "+1"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

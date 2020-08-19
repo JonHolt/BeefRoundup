@@ -26,5 +26,9 @@ func _select_random_critter():
 		return 1 # Chicken
 	elif percent <= 85:
 		return 2 # Pig
+	elif percent <= 90:
+		return 3 # Cat
+	elif percent <= 95:
+		return 4 # Dog
 	else:
 		return 0 # Catch-all to cow for now
