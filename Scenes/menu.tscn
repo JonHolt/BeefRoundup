@@ -1,0 +1,161 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Assets/half_size.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/new_days.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/UFO/3.png" type="Texture" id=3]
+[ext_resource path="res://Assets/UFO/beam.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Creatures/cow.png" type="Texture" id=5]
+[ext_resource path="res://Assets/UFO/2.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Creatures/Chicken.png" type="Texture" id=7]
+[ext_resource path="res://Assets/cursor.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Creatures/cat.png" type="Texture" id=9]
+[ext_resource path="res://Assets/no.png" type="Texture" id=10]
+[ext_resource path="res://Assets/yes.png" type="Texture" id=11]
+[ext_resource path="res://Scenes/StartButton.gd" type="Script" id=12]
+[ext_resource path="res://Scenes/ExitButton.gd" type="Script" id=13]
+[ext_resource path="res://Scenes/Button2.gd" type="Script" id=14]
+[ext_resource path="res://Assets/sfx/Blues.ogg" type="AudioStream" id=15]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 376.832
+margin_top = 34.9234
+margin_right = 646.832
+margin_bottom = 65.9234
+custom_fonts/font = ExtResource( 2 )
+text = "Beef Roundup!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="Button" parent="."]
+margin_left = 150.0
+margin_top = 200.0
+margin_right = 217.0
+margin_bottom = 222.0
+custom_fonts/font = ExtResource( 1 )
+text = "Start"
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditButton" type="Button" parent="."]
+margin_left = 150.0
+margin_top = 260.0
+margin_right = 217.0
+margin_bottom = 282.0
+custom_fonts/font = ExtResource( 1 )
+text = "Credit"
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitButton" type="Button" parent="."]
+margin_left = 150.0
+margin_top = 320.0
+margin_right = 217.0
+margin_bottom = 342.0
+custom_fonts/font = ExtResource( 1 )
+text = "Exit"
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 378.107
+margin_top = 120.267
+margin_right = 950.107
+margin_bottom = 155.267
+custom_fonts/font = ExtResource( 1 )
+text = "Click, drag, and release to \"flick\" the UFO away from the cursor.
+The farther the click, the stronger the flick!"
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_left = 370.424
+margin_top = 169.053
+margin_right = 871.424
+margin_bottom = 324.053
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2D" type="Line2D" parent="PanelContainer"]
+position = Vector2( 205.069, 70.512 )
+points = PoolVector2Array( 0, 0, 100, 20 )
+width = 1.0
+default_color = Color( 0.0542603, 0.992188, 0.0542603, 1 )
+
+[node name="Sprite" type="Sprite" parent="PanelContainer"]
+position = Vector2( 205.069, 70.512 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+
+[node name="Sprite2" type="Sprite" parent="PanelContainer"]
+position = Vector2( 308.012, 96.0804 )
+texture = ExtResource( 8 )
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 378.424
+margin_top = 333.053
+margin_right = 827.424
+margin_bottom = 368.053
+custom_fonts/font = ExtResource( 1 )
+text = "Pass over farm animals to beam them up.
+But don't pick up Humans or their beloved pets!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer2" type="PanelContainer" parent="."]
+margin_left = 369.424
+margin_top = 384.053
+margin_right = 870.424
+margin_bottom = 539.053
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite3" type="Sprite" parent="PanelContainer2"]
+position = Vector2( 252.723, 93.2868 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 5 )
+
+[node name="Sprite2" type="Sprite" parent="PanelContainer2"]
+position = Vector2( 250.589, 81.1118 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="PanelContainer2"]
+position = Vector2( 250.131, 58.7449 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="PanelContainer2"]
+position = Vector2( 102.67, 87.2859 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 9 )
+
+[node name="Sprite5" type="Sprite" parent="PanelContainer2"]
+position = Vector2( 404.182, 92.0427 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 7 )
+
+[node name="Sprite6" type="Sprite" parent="PanelContainer2"]
+position = Vector2( 105.445, 112.841 )
+texture = ExtResource( 10 )
+
+[node name="Sprite7" type="Sprite" parent="PanelContainer2"]
+position = Vector2( 404.182, 117.598 )
+texture = ExtResource( 11 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+autoplay = true
+[connection signal="pressed" from="StartButton" to="StartButton" method="_on_StartButton_pressed"]
+[connection signal="pressed" from="CreditButton" to="CreditButton" method="_on_CreditButton_pressed"]
+[connection signal="pressed" from="ExitButton" to="ExitButton" method="_on_ExitButton_pressed"]

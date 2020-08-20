@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Button.gd" type="Script" id=1]
+[ext_resource path="res://Assets/half_size.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/sfx/Blues.ogg" type="AudioStream" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 378.27
+margin_top = 191.941
+margin_right = 665.27
+margin_bottom = 283.941
+custom_fonts/font = ExtResource( 2 )
+text = "Background Music provided by:
+patrickdearteaga.com
+
+Sprites and Beam Sound Effect:
+kenney.nl"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 495.637
+margin_top = 322.35
+margin_right = 554.637
+margin_bottom = 344.35
+custom_fonts/font = ExtResource( 2 )
+text = "Back"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]

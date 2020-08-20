@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/UFO/1.png" type="Texture" id=1]
 [ext_resource path="res://Assets/UFO/2.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scenes/UFO.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/beam.gd" type="Script" id=5]
 [ext_resource path="res://Assets/UFO/beam.png" type="Texture" id=6]
+[ext_resource path="res://Assets/sfx/phaseJump1.ogg" type="AudioStream" id=7]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.01
@@ -59,4 +60,9 @@ scale = Vector2( 2, 2 )
 frames = SubResource( 3 )
 frame = 2
 playing = true
+
+[node name="SoundBeam" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+volume_db = 1.0
+pitch_scale = 1.2
 [connection signal="timeout" from="Beam/Timer" to="Beam" method="_on_Timer_timeout"]

@@ -13,7 +13,7 @@ func _process(_delta):
 		$FlickVector.add_point(Vector2(0,0))
 		$FlickVector.add_point(get_global_mouse_position() - global_position)
 
-func _input(event):
+func _input(_event):
 	if Input.is_action_just_pressed("click"):
 		selected = true
 	if Input.is_action_just_released("click") && selected:
@@ -31,3 +31,4 @@ func beam(points):
 	point_total += points
 	emit_signal("score_changed", point_total)
 	$Beam.show()
+	$SoundBeam.play()

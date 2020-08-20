@@ -16,12 +16,13 @@ _global_script_class_icons={
 [application]
 
 config/name="Beef Roundup"
-run/main_scene="res://Scenes/Yard.tscn"
+run/main_scene="res://Scenes/menu.tscn"
 config/icon="res://icon.png"
 
 [display]
 
 window/size/resizable=false
+window/size/always_on_top=true
 
 [input]
 

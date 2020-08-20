@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Assets/colored_transparent_packed.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/UFO.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Scenes/Impulses.gd" type="Script" id=10]
 [ext_resource path="res://Scenes/Critters/Cat.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Critters/Dog.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Assets/sfx/Chiptronical.ogg" type="AudioStream" id=13]
 
 [sub_resource type="TileSet" id=1]
 0/name = "colored_transparent_packed.png 0"
@@ -195,20 +196,10 @@ wait_time = 5.0
 script = ExtResource( 8 )
 critter_types = [ ExtResource( 4 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 12 ) ]
 
-[node name="Cow" parent="CritterManager" instance=ExtResource( 4 )]
-position = Vector2( 866.669, 161.121 )
-
-[node name="Cow2" parent="CritterManager" instance=ExtResource( 4 )]
-position = Vector2( 614.324, 461.14 )
-
-[node name="Cow3" parent="CritterManager" instance=ExtResource( 4 )]
-position = Vector2( 629.404, 290.494 )
-
-[node name="Cow4" parent="CritterManager" instance=ExtResource( 4 )]
-position = Vector2( 134.929, 376.214 )
-
-[node name="Pig" parent="CritterManager" instance=ExtResource( 9 )]
-position = Vector2( 352.121, 177.801 )
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = -3.029
+autoplay = true
 [connection signal="impulse_changed" from="UFO" to="UI/Impulses" method="_on_UFO_impulse_changed"]
 [connection signal="score_changed" from="UFO" to="UI/Score" method="_on_UFO_score_changed"]
 [connection signal="timeout" from="CritterManager" to="CritterManager" method="_on_CritterManager_timeout"]

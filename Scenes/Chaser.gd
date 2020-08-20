@@ -2,6 +2,8 @@ extends Node2D
 
 export(float) var move_speed = 2
 export(float) var speed_varience = 0
+var t
+var from_point
 var parent
 var target
 var speed
@@ -9,19 +11,23 @@ var speed
 func _ready():
 	randomize()
 	parent = find_parent("*")
-	_pick_target()
-	_set_speed()
+	_change_destination()
 	
 func _process(delta):
 	if target == null || (parent.global_position - target.global_position).length() < 16:
-		_pick_target()
-		_set_speed()
-	parent.global_position = lerp(parent.global_position, target.global_position, speed * delta)
+		_change_destination()
+	t += delta * speed
+	parent.global_position = lerp(from_point, target.global_position, t)
+
+func _change_destination():
+	t = 0.0
+	from_point = global_position
+	_pick_target()
+	_set_speed()
 
 func _pick_target():
 	var target_group = get_tree().get_nodes_in_group("critter")
 	target = target_group[randi() % target_group.size()]
-	print(target)
 
 func _set_speed():
 	if speed_varience == 0:
