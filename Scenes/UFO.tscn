@@ -6,7 +6,7 @@
 [ext_resource path="res://Scenes/UFO.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/beam.gd" type="Script" id=5]
 [ext_resource path="res://Assets/UFO/beam.png" type="Texture" id=6]
-[ext_resource path="res://Assets/sfx/phaseJump1.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Assets/sfx/pepSound3.ogg" type="AudioStream" id=7]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.01

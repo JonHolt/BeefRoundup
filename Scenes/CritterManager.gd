@@ -1,6 +1,7 @@
 extends Timer
 
 export(Array, Resource) var critter_types = []
+export (Resource) var fighter
 export var MAX_CRITTERS = 100
 
 var screen_size
@@ -43,3 +44,15 @@ func _select_random_critter():
 		return 4 # Dog
 	else:
 		return 0 # Catch-all to cow for now
+
+func spawn_fighter():
+	var iFighter = fighter.instance()
+	iFighter.global_position = Vector2(1500, 300)
+	add_child(iFighter)
+
+func _on_Timer_time_up():
+	get_tree().change_scene("res://Scenes/ScoreScreen.tscn")
+
+
+func _on_Timer_increment():
+	$Farmer/Chaser.move_speed += 5

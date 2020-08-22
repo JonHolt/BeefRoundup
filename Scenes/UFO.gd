@@ -7,6 +7,10 @@ var selected = false
 var point_total = 0
 var impulses = 0
 
+func _ready():
+	Global.score = 0
+	Global.pushes = 0
+
 func _process(_delta):
 	if selected:
 		$FlickVector.clear_points()
@@ -24,11 +28,13 @@ func _input(_event):
 func launch():
 	impulses += 1
 	emit_signal("impulse_changed", impulses)
+	Global.pushes = impulses
 	var push = global_position - get_global_mouse_position()
 	apply_central_impulse(push)
 
 func beam(points):
 	point_total += points
 	emit_signal("score_changed", point_total)
+	Global.score = point_total
 	$Beam.show()
 	$SoundBeam.play()

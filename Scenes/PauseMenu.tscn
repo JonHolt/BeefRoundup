@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/new_days.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scenes/PauseMenu.gd" type="Script" id=2]
+
+[node name="PauseMenu" type="CanvasLayer"]
+pause_mode = 2
+script = ExtResource( 2 )
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_left = 256.0
+margin_top = 106.0
+margin_right = 498.0
+margin_bottom = 487.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pause" type="Label" parent="."]
+margin_left = 300.0
+margin_top = 156.801
+margin_right = 440.0
+margin_bottom = 187.801
+custom_fonts/font = ExtResource( 1 )
+text = "Paused"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Button" parent="."]
+margin_left = 300.0
+margin_top = 226.725
+margin_right = 412.0
+margin_bottom = 263.725
+custom_fonts/font = ExtResource( 1 )
+text = "Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Button" parent="."]
+margin_left = 300.0
+margin_top = 305.125
+margin_right = 412.0
+margin_bottom = 342.125
+custom_fonts/font = ExtResource( 1 )
+text = "Exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resume" type="Button" parent="."]
+margin_left = 300.0
+margin_top = 397.299
+margin_right = 462.0
+margin_bottom = 434.299
+custom_fonts/font = ExtResource( 1 )
+text = "Resume"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Menu" to="." method="_on_Menu_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="Resume" to="." method="_on_Resume_pressed"]

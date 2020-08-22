@@ -1,0 +1,85 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/new_days.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/half_size.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scenes/ScoreScreen.gd" type="Script" id=3]
+
+[node name="Label" type="Label"]
+margin_left = 407.835
+margin_top = 135.384
+margin_right = 610.835
+margin_bottom = 166.384
+custom_fonts/font = ExtResource( 1 )
+text = "Game Over"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 35.3177
+margin_top = 50.4538
+margin_right = 89.3177
+margin_bottom = 66.4538
+custom_fonts/font = ExtResource( 2 )
+text = "Score:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="."]
+margin_left = 100.914
+margin_top = 50.2752
+margin_right = 160.914
+margin_bottom = 66.2752
+custom_fonts/font = ExtResource( 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pushes" type="Label" parent="."]
+margin_left = 100.539
+margin_top = 80.6159
+margin_right = 160.539
+margin_bottom = 96.6159
+custom_fonts/font = ExtResource( 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 21.0225
+margin_top = 79.0443
+margin_right = 92.0225
+margin_bottom = 95.0443
+custom_fonts/font = ExtResource( 2 )
+text = "Pushes:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Button" parent="."]
+margin_left = -40.4543
+margin_top = 141.59
+margin_right = 19.5457
+margin_bottom = 163.59
+custom_fonts/font = ExtResource( 2 )
+text = "Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Button" parent="."]
+margin_left = 154.326
+margin_top = 141.59
+margin_right = 199.326
+margin_bottom = 163.59
+custom_fonts/font = ExtResource( 2 )
+text = "Exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Menu" to="." method="_on_Menu_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]

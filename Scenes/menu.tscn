@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Assets/half_size.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/new_days.tres" type="DynamicFont" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Scenes/ExitButton.gd" type="Script" id=13]
 [ext_resource path="res://Scenes/Button2.gd" type="Script" id=14]
 [ext_resource path="res://Assets/sfx/Blues.ogg" type="AudioStream" id=15]
+[ext_resource path="res://Scenes/StartButton2.gd" type="Script" id=16]
 
 [node name="Node2D" type="Node2D"]
 
@@ -32,20 +33,32 @@ __meta__ = {
 [node name="StartButton" type="Button" parent="."]
 margin_left = 150.0
 margin_top = 200.0
-margin_right = 217.0
+margin_right = 225.0
 margin_bottom = 222.0
 custom_fonts/font = ExtResource( 1 )
-text = "Start"
+text = "Timed"
 script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton2" type="Button" parent="."]
+margin_left = 150.0
+margin_top = 230.26
+margin_right = 225.0
+margin_bottom = 252.26
+custom_fonts/font = ExtResource( 1 )
+text = "Infinite"
+script = ExtResource( 16 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CreditButton" type="Button" parent="."]
 margin_left = 150.0
-margin_top = 260.0
-margin_right = 217.0
-margin_bottom = 282.0
+margin_top = 261.556
+margin_right = 225.0
+margin_bottom = 283.556
 custom_fonts/font = ExtResource( 1 )
 text = "Credit"
 script = ExtResource( 14 )
@@ -55,9 +68,9 @@ __meta__ = {
 
 [node name="ExitButton" type="Button" parent="."]
 margin_left = 150.0
-margin_top = 320.0
-margin_right = 217.0
-margin_bottom = 342.0
+margin_top = 294.183
+margin_right = 225.0
+margin_bottom = 316.183
 custom_fonts/font = ExtResource( 1 )
 text = "Exit"
 script = ExtResource( 13 )
@@ -157,5 +170,6 @@ texture = ExtResource( 11 )
 stream = ExtResource( 15 )
 autoplay = true
 [connection signal="pressed" from="StartButton" to="StartButton" method="_on_StartButton_pressed"]
+[connection signal="pressed" from="StartButton2" to="StartButton2" method="_on_StartButton_pressed"]
 [connection signal="pressed" from="CreditButton" to="CreditButton" method="_on_CreditButton_pressed"]
 [connection signal="pressed" from="ExitButton" to="ExitButton" method="_on_ExitButton_pressed"]

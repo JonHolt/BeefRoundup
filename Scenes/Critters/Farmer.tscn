@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Creatures/farmer.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Beamable.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Critters/Farmer.gd" type="Script" id=3]
+[ext_resource path="res://Assets/half_size.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Scenes/Chaser.tscn" type="PackedScene" id=5]
+
+[node name="Farmer" type="Sprite"]
+scale = Vector2( 1.8, 1.8 )
+texture = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Beamable" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, -13.945 )
+
+[node name="DeathTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="RebirthTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="RageBubble" type="Label" parent="."]
+visible = false
+margin_left = 13.2992
+margin_top = -19.5988
+margin_right = 162.299
+margin_bottom = -3.59877
+custom_fonts/font = ExtResource( 4 )
+text = "I've been probed!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Chaser" parent="." groups=[
+"critter",
+] instance=ExtResource( 5 )]
+move_speed = 10.0
+chase_player = true
+[connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]
+[connection signal="timeout" from="RebirthTimer" to="." method="_on_RebirthTimer_timeout"]
