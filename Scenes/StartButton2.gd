@@ -1,4 +1,4 @@
 extends Button
 
 func _on_StartButton_pressed():
-	get_tree().change_scene("res://Scenes/Yard-Inf.tscn")
+	var _ok = get_tree().change_scene("res://Scenes/Yard-Inf.tscn")

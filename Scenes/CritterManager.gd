@@ -51,7 +51,7 @@ func spawn_fighter():
 	add_child(iFighter)
 
 func _on_Timer_time_up():
-	get_tree().change_scene("res://Scenes/ScoreScreen.tscn")
+	var _ok = get_tree().change_scene("res://Scenes/ScoreScreen.tscn")
 
 
 func _on_Timer_increment():

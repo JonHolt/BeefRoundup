@@ -1,4 +1,4 @@
 extends Button
 
 func _on_CreditButton_pressed():
-	get_tree().change_scene("res://Scenes/credit.tscn")
+	var _ok = get_tree().change_scene("res://Scenes/credit.tscn")

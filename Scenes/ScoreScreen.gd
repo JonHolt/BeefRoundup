@@ -5,11 +5,11 @@ func _ready():
 	$Pushes.text = String(Global.pushes)
 
 func _on_Menu_pressed():
-	get_tree().change_scene("res://Scenes/menu.tscn")
+	var _ok = get_tree().change_scene("res://Scenes/menu.tscn")
 
 
 func _on_NewGame_pressed():
-	get_tree().change_scene("res://Scenes/Yard.tscn")
+	var _ok = get_tree().change_scene("res://Scenes/Yard.tscn")
 
 
 func _on_Exit_pressed():

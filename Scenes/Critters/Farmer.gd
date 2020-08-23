@@ -34,7 +34,7 @@ func beamed(body):
 	# Hold a grudge
 	times_beamed += 1
 	if times_beamed >= 5:
-		find_parent("CritterManager").spawn_fighter()
+		find_parent("CritterManager").call_deferred("spawn_fighter")
 
 func _on_DeathTimer_timeout():
 	global_position = player.global_position
